@@ -17,14 +17,14 @@
 </head>
 
 <body class=" antialiased">
-    <x-nav />
+    <x-masternav />
 
     <div>
         {{ $slot }}
     </div>
 
-
-    <x-footer />
+    {{--
+    <x-footer /> --}}
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Popper -->

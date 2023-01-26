@@ -1,129 +1,25 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" />
-    <title>Leadway Credit Union</title>
-</head>
-
-<body class="text-gray-800 antialiased">
-    <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 ">
-        <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
-            <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                    href="{{ route('home') }}">Leadway Credit
-                    Union</a><button
-                    class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                    type="button" onclick="toggleNavbar('example-collapse-navbar')">
-                    <i class="text-white fas fa-bars"></i>
-                </button>
-            </div>
-            <div class="lg:flex flex-grow items-center bg-gray-300 rounded-lg lg:bg-transparent lg:shadow-none hidden"
-                id="example-collapse-navbar">
-                <ul class="flex flex-col lg:flex-row list-none mr-auto">
-                    <li class="flex items-center">
-
-
-                        <svg class="w-5 h-5 pl-2 md:pl-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path fill="white"
-                                d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8.1-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zm128-96c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z" />
-                        </svg>
-
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="{{ route('cands') }}">
-                            Checking & Savings
-                        </a>
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 pl-2 md:pl-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                            <path fill="white"
-                                d="M168 336C181.3 336 192 346.7 192 360C192 373.3 181.3 384 168 384H120C106.7 384 96 373.3 96 360C96 346.7 106.7 336 120 336H168zM360 336C373.3 336 384 346.7 384 360C384 373.3 373.3 384 360 384H248C234.7 384 224 373.3 224 360C224 346.7 234.7 336 248 336H360zM512 32C547.3 32 576 60.65 576 96V416C576 451.3 547.3 480 512 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H512zM512 80H64C55.16 80 48 87.16 48 96V128H528V96C528 87.16 520.8 80 512 80zM528 224H48V416C48 424.8 55.16 432 64 432H512C520.8 432 528 424.8 528 416V224z" />
-                        </svg>
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="{{ route('cc') }}">
-                            Credit Cards</a>
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 pl-2 md:pl-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path fill="white"
-                                d="M320 96H192L144.6 24.9C137.5 14.2 145.1 0 157.9 0H354.1c12.8 0 20.4 14.2 13.3 24.9L320 96zM192 128H320c3.8 2.5 8.1 5.3 13 8.4C389.7 172.7 512 250.9 512 416c0 53-43 96-96 96H96c-53 0-96-43-96-96C0 250.9 122.3 172.7 179 136.4l0 0 0 0c4.8-3.1 9.2-5.9 13-8.4zm84.1 96c0-11.1-9-20.1-20.1-20.1s-20.1 9-20.1 20.1v6c-5.6 1.2-10.9 2.9-15.9 5.1c-15 6.8-27.9 19.4-31.1 37.7c-1.8 10.2-.8 20 3.4 29c4.2 8.8 10.7 15 17.3 19.5c11.6 7.9 26.9 12.5 38.6 16l2.2 .7c13.9 4.2 23.4 7.4 29.3 11.7c2.5 1.8 3.4 3.2 3.8 4.1c.3 .8 .9 2.6 .2 6.7c-.6 3.5-2.5 6.4-8 8.8c-6.1 2.6-16 3.9-28.8 1.9c-6-1-16.7-4.6-26.2-7.9l0 0 0 0 0 0 0 0c-2.2-.8-4.3-1.5-6.3-2.1c-10.5-3.5-21.8 2.2-25.3 12.7s2.2 21.8 12.7 25.3c1.2 .4 2.7 .9 4.4 1.5c7.9 2.7 20.3 6.9 29.8 9.1V416c0 11.1 9 20.1 20.1 20.1s20.1-9 20.1-20.1v-5.5c5.4-1 10.5-2.5 15.4-4.6c15.7-6.7 28.4-19.7 31.6-38.7c1.8-10.4 1-20.3-3-29.4c-3.9-9-10.2-15.6-16.9-20.5c-12.2-8.8-28.3-13.7-40.4-17.4l-.8-.2c-14.2-4.3-23.8-7.3-29.9-11.4c-2.6-1.8-3.4-3-3.6-3.5c-.2-.3-.7-1.6-.1-5c.3-1.9 1.9-5.2 8.2-8.1c6.4-2.9 16.4-4.5 28.6-2.6c4.3 .7 17.9 3.3 21.7 4.3c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-4.4-1.2-14.4-3.2-21-4.4V224z" />
-                        </svg>
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="{{ route('loans') }}">
-                            Loans</a>
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 pl-2 md:pl-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                            <path fill="white"
-                                d="M88 216c81.7 10.2 273.7 102.3 304 232H0c99.5-8.1 184.5-137 88-232zm32-152c32.3 35.6 47.7 83.9 46.4 133.6C249.3 231.3 373.7 321.3 400 448h96C455.3 231.9 222.8 79.5 120 64z" />
-                        </svg>
-
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="{{ route('pands') }}">
-                            Product & Services</a>
-                    </li>
-                </ul>
-                <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-                    {{-- <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="#pablo"><span class="lg:hidden inline-block ml-2 text-red-500"></span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="#pablo"><i
-                                class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg "></i><span
-                                class="lg:hidden inline-block ml-2"></span></a>
-                    </li>
-                    <li class="flex items-center">
-                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="#pablo"><i
-                                class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "></i><span
-                                class="lg:hidden inline-block ml-2"></span></a>
-                    </li> --}}
-                    <li class="flex items-center">
-                        <div
-                            class="bg-gray-700 text-white active:bg-gray-100 active:text-gray-700 text-xs w-full font-bold uppercase mx-4 text-center md:mx-0 px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 md:ml-3 mb-3">
-                            <a href="{{ route('register') }}" style="transition: all 0.15s ease 0s;">
-                                Join Us
-                            </a>
-                        </div>
-                    </li>
-                    <li class="flex items-center">
-                        <div
-                            class="bg-gray-700 text-white  md:bg-gray-100  active:bg-gray-100 active:text-gray-700 text-xs w-full font-bold uppercase mx-4 text-center md:mx-0 px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 md:ml-3 mb-3">
-                            <a href="{{ route('login') }}" style="transition: all 0.15s ease 0s;">
-                                Sign In
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<x-layout>
     <main>
         <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
             <div class="absolute top-0 w-full h-full bg-center bg-cover"
                 style='background-image: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80");'>
-                <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+                <span id="blackOver" class="w-full h-full absolute opacity-75 bg-black"></span>
             </div>
             <div class="container relative mx-auto">
                 <div class="items-center flex flex-wrap">
                     <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                        <div class="pr-12">
+                        <div class="">
                             <h1 class="text-white font-semibold text-5xl">
-                                Your story starts with us.
+                                Leadway Credit Union
                             </h1>
                             <p class="mt-4 text-lg text-gray-300">
-                                This is a simple example of a Landing Page you can build using
-                                Tailwind Starter Kit. It features multiple CSS components
-                                based on the Tailwindcss design system.
+                                Leadway Credit Union always puts people first.
+                                We're here to improve your financial life.
+                            </p>
+                            <p class="mt-2 text-lg text-gray-300">
+                                You’ve got financial goals and we’re here to help get you there. Check out our products
+                                and you’ll notice a theme—fewer
+                                fees and great rates!
                             </p>
                         </div>
                     </div>
@@ -148,11 +44,14 @@
                                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                                     <i class="fas fa-award"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Awarded Agency</h6>
+                                <h6 class="text-xl font-semibold">Credit Cards</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Divide details about your product or agency work into parts.
-                                    A paragraph describing a feature will be enough.
+                                    5% Lower Average APR Than Industry Average
                                 </p>
+                                <p class="mb-4 text-gray-600">
+                                    Our credit card APR is 5% lower than the industry average and capped at 18%
+                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -164,10 +63,12 @@
                                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
                                     <i class="fas fa-retweet"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Free Revisions</h6>
+                                <h6 class="text-xl font-semibold">Checking Account Dividends</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Keep you user engaged by providing meaningful information.
-                                    Remember that by this time, the user is curious.
+                                    Earn Dividends on All Accounts
+                                </p>
+                                <p class=" mb-4 text-gray-600">
+                                    Make your money work for you; earn dividends on every checking account.
                                 </p>
                             </div>
                         </div>
@@ -180,10 +81,12 @@
                                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
                                     <i class="fas fa-fingerprint"></i>
                                 </div>
-                                <h6 class="text-xl font-semibold">Verified Company</h6>
+                                <h6 class="text-xl font-semibold">Mortgages</h6>
                                 <p class="mt-2 mb-4 text-gray-600">
-                                    Write a few lines about each one. A paragraph describing a
-                                    feature will be enough. Keep you user engaged!
+                                    100% Financing Options
+                                </p>
+                                <p class=" mb-4 text-gray-600">
+                                    Low mortgage rates and no-money-down, 100% financing options
                                 </p>
                             </div>
                         </div>
@@ -196,20 +99,19 @@
                             <i class="fas fa-user-friends text-xl"></i>
                         </div>
                         <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                            Working with us is a pleasure
+                            Lower your monthly payments with a rate lower than our 30-year fixed rate!
                         </h3>
                         <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
-                            Don't let your uses guess by attaching tooltips and popoves to
-                            any element. Just make sure you enable them first via
-                            JavaScript.
+                            Our 15/15 Adjustable-Rate Mortgage (ARM) offers a 30-year mortgage with a fixed-interest
+                            rate for 15 years then adjusts
+                            one time for the next 15 years.
                         </p>
                         <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
-                            The kit comes with three pre-built pages to help you get started
-                            faster. You can change the text and images and you're good to
-                            go. Just make sure you enable them first via JavaScript.
+                            This loan might work best for you if you plan to have a
+                            steady income increase or
+                            refinance or sell your home within 15 years.
                         </p>
-                        <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
-                            class="font-bold text-gray-800 mt-8">Check Tailwind Starter Kit!</a>
+                        <a href="" class="font-bold text-gray-800 mt-8">Get Started!</a>
                     </div>
                     <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
                         <div
@@ -222,13 +124,15 @@
                                     class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
                                     <polygon points="-30,95 583,95 583,65" class="text-pink-600 fill-current"></polygon>
                                 </svg>
-                                <h4 class="text-xl font-bold text-white">
-                                    Top Notch Services
+                                <h4 class="text-xl font-bold text-black">
+                                    Benefit
                                 </h4>
-                                <p class="text-md font-light mt-2 text-white">
-                                    The Arctic Ocean freezes every winter and much of the
-                                    sea-ice then thaws every summer, and that process will
-                                    continue whatever happens.
+                                <p class="text-md font-light mt-2 text-black">
+                                    When you finance or refinance your home with us, we endeavor to provide you with
+                                    exceptional service. Our team of
+                                    mortgage loan originators, processors, and underwriters work together to notify
+                                    applicants within one to two days and
+                                    close loans generally within 30 days.
                                 </p>
                             </blockquote>
                         </div>
@@ -256,11 +160,11 @@
                                 class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
                                 <i class="fas fa-rocket text-xl"></i>
                             </div>
-                            <h3 class="text-3xl font-semibold">A growing company</h3>
+                            <h3 class="text-3xl font-semibold">High-Rate Checking</h3>
                             <p class="mt-4 text-lg leading-relaxed text-gray-600">
-                                The extension comes with three pre-built pages to help you get
-                                started faster. You can change the text and images and you're
-                                good to go.
+                                Convenient banking shouldn’t come with unnecessary fees. That's why we have no monthly
+                                minimum balance requirements on
+                                your Leadway checking.
                             </p>
                             <ul class="list-none mt-6">
                                 <li class="py-2">
@@ -272,7 +176,7 @@
                                         </div>
                                         <div>
                                             <h4 class="text-gray-600">
-                                                Carefully crafted components
+                                                ATM fee rebates up to $20/month and 80,000 fee-free ATMs nationwide
                                             </h4>
                                         </div>
                                     </div>
@@ -285,7 +189,8 @@
                                                     class="fab fa-html5"></i></span>
                                         </div>
                                         <div>
-                                            <h4 class="text-gray-600">Amazing page examples</h4>
+                                            <h4 class="text-gray-600">A checking rate that surpasses most banks’ savings
+                                                accounts at 4% APY</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -297,7 +202,73 @@
                                                     class="far fa-paper-plane"></i></span>
                                         </div>
                                         <div>
-                                            <h4 class="text-gray-600">Dynamic components</h4>
+                                            <h4 class="text-gray-600">No overdraft fees and no monthly service fees.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 mt-16">
+                <div class="items-center flex flex-wrap">
+                    <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
+                        <img alt="..." class="max-w-full rounded-lg shadow-lg"
+                            src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80" />
+                    </div>
+                    <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
+                        <div class="md:pr-12">
+                            <div
+                                class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
+                                <i class="fas fa-rocket text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-semibold">High-Rate Savings</h3>
+                            <p class="mt-4 text-lg leading-relaxed text-gray-600">
+                                Reach your savings goals faster with our award-winning savings account. Our rate is 18x
+                                the national bank average
+                                Plus, you'll have no minimum balance requirements to open or maintain the account.
+                            </p>
+                            <ul class="list-none mt-6">
+                                <li class="py-2">
+                                    <div class="flex items-center">
+                                        <div>
+                                            <span
+                                                class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
+                                                    class="fas fa-fingerprint"></i></span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-gray-600">
+                                                High rate of 2.70% APY
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="flex items-center">
+                                        <div>
+                                            <span
+                                                class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
+                                                    class="fab fa-html5"></i></span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-gray-600">No monthly fee if you select eStatements</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="py-2">
+                                    <div class="flex items-center">
+                                        <div>
+                                            <span
+                                                class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
+                                                    class="far fa-paper-plane"></i></span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-gray-600">Your financial goals are limitless—so there’s no
+                                                maximum balance limit
+                                            </h4>
                                         </div>
                                     </div>
                                 </li>
@@ -307,122 +278,7 @@
                 </div>
             </div>
         </section>
-        <section class="pt-20 pb-48">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap justify-center text-center mb-24">
-                    <div class="w-full lg:w-6/12 px-4">
-                        <h2 class="text-4xl font-semibold">Here are our heroes</h2>
-                        <p class="text-lg leading-relaxed m-4 text-gray-600">
-                            According to the National Oceanic and Atmospheric
-                            Administration, Ted, Scambos, NSIDClead scentist, puts the
-                            potentially record maximum.
-                        </p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap">
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-1-800x800.jpg"
-                                class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Ryan Tompson</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Web Developer
-                                </p>
-                                <div class="mt-6">
-                                    <button
-                                        class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-twitter"></i></button><button
-                                        class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-facebook-f"></i></button><button
-                                        class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-dribbble"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-2-800x800.jpg"
-                                class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Romina Hadid</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Marketing Specialist
-                                </p>
-                                <div class="mt-6">
-                                    <button
-                                        class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-google"></i></button><button
-                                        class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-3-800x800.jpg"
-                                class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Alexa Smith</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    UI/UX Designer
-                                </p>
-                                <div class="mt-6">
-                                    <button
-                                        class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-google"></i></button><button
-                                        class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-twitter"></i></button><button
-                                        class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-instagram"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-                        <div class="px-6">
-                            <img alt="..." src="./assets/img/team-4-470x470.png"
-                                class="shadow-lg rounded-full max-w-full mx-auto" style="max-width: 120px;" />
-                            <div class="pt-6 text-center">
-                                <h5 class="text-xl font-bold">Jenna Kardi</h5>
-                                <p class="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                                    Founder and CEO
-                                </p>
-                                <div class="mt-6">
-                                    <button
-                                        class="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-dribbble"></i></button><button
-                                        class="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-google"></i></button><button
-                                        class="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-twitter"></i></button><button
-                                        class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                                        type="button">
-                                        <i class="fab fa-instagram"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <section class="pb-20 relative block bg-gray-900">
             <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
                 style="height: 80px;">
@@ -434,11 +290,11 @@
             <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
                 <div class="flex flex-wrap text-center justify-center">
                     <div class="w-full lg:w-6/12 px-4">
-                        <h2 class="text-4xl font-semibold text-white">Build something</h2>
+                        <h2 class="text-4xl font-semibold text-white">Auto Loans</h2>
                         <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-                            Put the potentially record low maximum sea ice extent tihs year
-                            down to low ice. According to the National Oceanic and
-                            Atmospheric Administration, Ted, Scambos.
+                            Put your current high-interest auto loan in your rearview mirror and refinance your loans
+                            with Alliant. You could get a
+                            same-day approval at a rate that beats industry averages.
                         </p>
                     </div>
                 </div>
@@ -449,11 +305,10 @@
                             <i class="fas fa-medal text-xl"></i>
                         </div>
                         <h6 class="text-xl mt-5 font-semibold text-white">
-                            Excelent Services
+                            Best rate
                         </h6>
                         <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
+                            New auto rates as low as 5.40%
                         </p>
                     </div>
                     <div class="w-full lg:w-3/12 px-4 text-center">
@@ -462,11 +317,10 @@
                             <i class="fas fa-poll text-xl"></i>
                         </div>
                         <h5 class="text-xl mt-5 font-semibold text-white">
-                            Grow your market
+                            Smart way to save
                         </h5>
                         <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
+                            Refinance your higher-rate auto loans and you could save
                         </p>
                     </div>
                     <div class="w-full lg:w-3/12 px-4 text-center">
@@ -474,10 +328,9 @@
                             class="text-gray-900 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
                             <i class="fas fa-lightbulb text-xl"></i>
                         </div>
-                        <h5 class="text-xl mt-5 font-semibold text-white">Launch time</h5>
+                        <h5 class="text-xl mt-5 font-semibold text-white">Fair terms</h5>
                         <p class="mt-2 mb-4 text-gray-500">
-                            Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
+                            Loan terms up to 84 months on new vehicles
                         </p>
                     </div>
                 </div>
@@ -490,13 +343,21 @@
                         <div
                             class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300">
                             <div class="flex-auto p-5 lg:p-10">
-                                <h4 class="text-2xl font-semibold">Want to work with us?</h4>
+                                <h4 class="text-2xl font-semibold">Apply for Auto Loan ? </h4>
                                 <p class="leading-relaxed mt-1 mb-4 text-gray-600">
-                                    Complete this form and we will get back to you in 24 hours.
+                                    Complete this form and we will get back to you in 24 hours (business day).
                                 </p>
                                 <div class="relative w-full mb-3 mt-8">
                                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                        for="full-name">Full Name</label><input type="text"
+                                        for="full-name">First
+                                        Name</label><input type="text"
+                                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                                        placeholder="Full Name" style="transition: all 0.15s ease 0s;" />
+                                </div>
+                                <div class="relative w-full mb-3 mt-8">
+                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                        for="full-name">Last
+                                        Name</label><input type="text"
                                         class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                                         placeholder="Full Name" style="transition: all 0.15s ease 0s;" />
                                 </div>
@@ -506,17 +367,12 @@
                                         class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                                         placeholder="Email" style="transition: all 0.15s ease 0s;" />
                                 </div>
-                                <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                        for="message">Message</label><textarea rows="4" cols="80"
-                                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                        placeholder="Type a message..."></textarea>
-                                </div>
+
                                 <div class="text-center mt-6">
                                     <button
                                         class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                                         type="button" style="transition: all 0.15s ease 0s;">
-                                        Send Message
+                                        Apply
                                     </button>
                                 </div>
                             </div>
@@ -526,105 +382,4 @@
             </div>
         </section>
     </main>
-    <footer class="relative bg-gray-300 pt-8 pb-6">
-        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style="height: 80px;">
-            <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-                version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
-            </svg>
-        </div>
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
-                    <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
-                    <h5 class="text-lg mt-0 mb-2 text-gray-700">
-                        Find us on any of these platforms, we respond 1-2 business days.
-                    </h5>
-                    <div class="mt-6">
-                        <button
-                            class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                            type="button">
-                            <i class="flex fab fa-twitter"></i></button><button
-                            class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                            type="button">
-                            <i class="flex fab fa-facebook-square"></i></button><button
-                            class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                            type="button">
-                            <i class="flex fab fa-dribbble"></i></button><button
-                            class="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                            type="button">
-                            <i class="flex fab fa-github"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="w-full lg:w-6/12 px-4">
-                    <div class="flex flex-wrap items-top mb-6">
-                        <div class="w-full lg:w-4/12 px-4 ml-auto">
-                            <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://www.creative-tim.com/presentation">About Us</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://blog.creative-tim.com">Blog</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://www.github.com/creativetimofficial">Github</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://www.creative-tim.com/bootstrap-themes/free">Free Products</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="w-full lg:w-4/12 px-4">
-                            <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Other
-                                Resources</span>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md">MIT
-                                        License</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://creative-tim.com/terms">Terms &amp; Conditions</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://creative-tim.com/privacy">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                                        href="https://creative-tim.com/contact-us">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-6 border-gray-400" />
-            <div class="flex flex-wrap items-center md:justify-between justify-center">
-                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-                    <div class="text-sm text-gray-600 font-semibold py-1">
-                        Copyright © 2019 Tailwind Starter Kit by
-                        <a href="https://www.creative-tim.com" class="text-gray-600 hover:text-gray-900">Creative
-                            Tim</a>.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-<script>
-    function toggleNavbar(collapseID) {
-      document.getElementById(collapseID).classList.toggle("hidden");
-      document.getElementById(collapseID).classList.toggle("block");
-    }
-</script>
-
-</html>
+</x-layout>
