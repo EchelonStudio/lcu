@@ -31,15 +31,33 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'min:3', 'max:255'],
+            'lastname' => ['required', 'string', 'min:3', 'max:255'],
+            'ssn' => ['required'],
+            'phone' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'address' => ['required', 'string',  'max:255'],
+            'idfront' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'idback' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $idfront      =       time().'.'.$request->idfront->extension();
+        $request->idfront->move(public_path('uploads'), $idfront);
+        
+        $idback      =       time().'.'.$request->idback->extension();
+        $request->idback->move(public_path('uploads'), $idback);
+
         $user = User::create([
-            'name' => $request->name,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'ssn' => $request->ssn,
+            'phone' => $request->phone,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+           'address' => $request->address,
+            'idfront' => $request->idfront,
+            'idback' => $request->idback,
+             'password' => Hash::make($request->password)
         ]);
 
         event(new Registered($user));
