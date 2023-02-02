@@ -43,7 +43,7 @@
                         href="{{ route('loans') }}">
                         Loans</a>
                 </li>
-                <li class="flex items-center">
+                {{-- <li class="flex items-center">
                     <svg class="w-5 h-5 pl-2 md:pl-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                         <path fill="white"
                             d="M88 216c81.7 10.2 273.7 102.3 304 232H0c99.5-8.1 184.5-137 88-232zm32-152c32.3 35.6 47.7 83.9 46.4 133.6C249.3 231.3 373.7 321.3 400 448h96C455.3 231.9 222.8 79.5 120 64z" />
@@ -52,7 +52,7 @@
                     <a class="{{ request()->is('product-and-services') ? 'border-b-4 border-gray-700 pb-4 mb-2 md:mb-0 ' : '' }}  text-black  lg:hover:text-gray-300  px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                         href="{{ route('pands') }}">
                         Product & Services</a>
-                </li>
+                </li> --}}
             </ul>
             <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
                 {{-- <li class="flex items-center">
