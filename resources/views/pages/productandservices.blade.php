@@ -1,3 +1,0 @@
-<x-masterlayout>
-
-</x-masterlayout>

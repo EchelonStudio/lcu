@@ -107,8 +107,8 @@
                     </form>
                     <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                         <li class="items-center">
-                            <a class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
-                                href="#/dashboard"><i class="fas fa-tv opacity-75 mr-2 text-sm"></i>
+                            <a class="{{ request()->is('dashboard') ? 'text-pink-500 ' : '' }}  hover:text-pink-600 text-xs uppercase py-3 font-bold block"
+                                href="{{ route('dashboard') }}"><i class="fas fa-tv opacity-75 mr-2 text-sm"></i>
                                 Dashboard</a>
                         </li>
 
@@ -116,7 +116,7 @@
                             <div>
                                 <i class="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>
                                 <a href="{{ route('transfer') }}"
-                                    class="uppercase text-blueGray-700  text-xs py-3 font-bold">Transfer
+                                    class="{{ request()->is('user/account/transfer') ? 'text-pink-500 ' : '' }}  uppercase hover:text-pink-600  text-xs py-3 font-bold">Transfer
                                 </a>
 
                                 {{-- UNFINISHED BUSINESS HERE --}}
@@ -366,361 +366,186 @@
                     </div>
                 </div>
             </div>
-            <div class="px-4 md:px-10 mx-auto w-full -m-24">
-                <div class="flex flex-wrap">
-                    <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                        <div
-                            class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-800">
-                            <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
-                                <div class="flex flex-wrap items-center">
-                                    <div class="relative w-full max-w-full flex-grow flex-1">
-                                        <h6 class="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
-                                            Overview
-                                        </h6>
-                                        <h2 class="text-white text-xl font-semibold">
-                                            Investment and Savings Value
-                                        </h2>
-                                    </div>
+            {{-- transfer section --}}
+            <section class="container mt-8 py-10 px-8 mx-auto ">
+                <div class="mb-6">
+                    @if (session()->has('success'))
+                    <div class="px-4 md:px-0">
+                        <div x-data="{show: true}" x-init="setTimeout(() => show = false, 10000)" x-show="show"
+                            class="{{ (session('success') ? 'bg-emerald-500' : 'bg-red-500 ') }} mx-auto max-w-lg rounded-lg md:max-w-4xl text-white ">
+                            <div class="container relative flex items-center justify-between px-6 py-4 mx-auto">
+                                <span class="absolute inset-x-0 top-0 h-1.5 bg-black animate-life rounded-xl"></span>
+                                <div class="flex">
+                                    <svg viewBox="0 0 40 40" class="w-6 h-6 fill-current">
+                                        <path
+                                            d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z">
+                                        </path>
+                                    </svg>
+
+                                    <p class="mx-3">{{ session('success') }}</p>
                                 </div>
-                            </div>
-                            <div class="p-4 flex-auto">
-                                <!-- Chart -->
-                                <div class="relative" style="height:350px">
-                                    <canvas id="line-chart"></canvas>
-                                </div>
+
+                                <button @click="show = false"
+                                    class="p-1 transition-colors duration-300 transform rounded-md hover:bg-opacity-25 hover:bg-gray-600 focus:outline-none">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full xl:w-4/12 px-4">
-                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-                            <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
-                                <div class="flex flex-wrap items-center">
-                                    <div class="relative w-full max-w-full flex-grow flex-1">
-                                        <h6 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
-                                            Performance
-                                        </h6>
-                                        <h2 class="text-blueGray-700 text-xl font-semibold">
-                                            Total orders
-                                        </h2>
-                                    </div>
+                    @endif
+                </div>
+                <div x-data="{'showDropdown' : false }"
+                    class="p-6 border border-black relative inline-block items-center w-full">
+                    <div class="flex justify-between">
+                        @if (isset($payees))
+                        <p>You have total number of payee : <span class="font-bold">{{ $payees->count() }}</span></p>
+                        @else
+                        <p>You have no Payee</p>
+                        @endif
+
+                        <button @click=" showDropdown = !showDropdown " type="button"
+                            class="p-2 bg-gray-700 text-white">
+                            Add payee
+                        </button>
+                    </div>
+                    <div x-cloak x-show="showDropdown" class="flex-col flex mt-4">
+                        <form action="{{ route('Payee') }}" method="POST">
+                            @csrf
+
+                            <div class="space-y-3">
+                                <div>
+                                    <label for="firstname" class="mr-4">Firstname</label>
+                                    <input type="text" name="firstname" id="firstname"
+                                        placeholder="Enter the Payee firstname" class="w-full "
+                                        value="{{ old('firstname') }}">
+                                    @error('firstname')
+                                    <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div>
+                                    <label for="lastname" class="mr-4">Lastname</label>
+                                    <input type="text" name="lastname" id="lastname"
+                                        placeholder="Enter the payee lastname" class="w-full "
+                                        value="{{ old('lastname') }}">
+                                    @error('lastname')
+                                    <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div><label for="bankname" class="mr-4">Bank name</label>
+                                    <input type="text" name="bank_name" id="bank_name"
+                                        placeholder="Enter the payee bank name" class="w-full "
+                                        value="{{ old('bank_name') }}">
+                                    @error('bank_name')
+                                    <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div>
+                                    <label for="routing" class="mr-4">Routing</label>
+                                    <input type="text" name="routing_number" id="routing_number"
+                                        placeholder="Enter the payee bank routing number" class="w-full "
+                                        value="{{ old('routing_number') }}">
+                                    @error('routing_number')
+                                    <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div>
+                                    <label for="account_number" class="">Account number</label>
+                                    <input type="text" name="account_number" id="account_number"
+                                        placeholder="Enter the payee bank account number" class="w-full "
+                                        value="{{ old('account_number') }}">
+                                    @error('bank_name')
+                                    <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div>
+                                    <button type="submit" class="p-2 px-6 bg-gray-700 text-white">Add</button>
                                 </div>
                             </div>
-                            <div class="p-4 flex-auto">
-                                <!-- Chart -->
-                                <div class="relative" style="height:350px">
-                                    <canvas id="bar-chart"></canvas>
-                                </div>
-                            </div>
-                        </div>
+
+
+
+                        </form>
                     </div>
                 </div>
-                <div class="flex flex-wrap mt-4">
-                    <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-                            <div class="rounded-t mb-0 px-4 py-3 border-0">
-                                <div class="flex flex-wrap items-center">
-                                    <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                                        <h3 class="font-semibold text-base text-blueGray-700">
-                                            Transaction History
-                                        </h3>
-                                    </div>
-                                    <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                                        <button
-                                            class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
-                                            type="button" style="transition:all .15s ease">
-                                            See all
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block w-full overflow-x-auto">
-                                <!-- Projects table -->
-                                <table class="items-center w-full bg-transparent border-collapse">
-                                    <thead>
-                                        <tr>
-                                            <th
-                                                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                                Date
-                                            </th>
-                                            <th
-                                                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                                Desccription
-                                            </th>
+            </section>
+            @if (isset($payees))
+            <section class="">
+                <div class="container px-6 py-12 mx-auto">
+                    <p class="text-center font-bold text-sm md:text-2xl mb-4">Added Payee</p>
+                    <div class="flex flex-wrap justify-between">
 
-                                            <th
-                                                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                                Amount
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                2022-08-04
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
-                                            </td>
+                        @foreach ($payees as $payee)
+                        <div>
 
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                                                $900
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                2022-08-04
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
-                                            </td>
+                            <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">Full Name: {{
+                                $payee->firstname }}
+                                {{ $payee->lastname }}
+                            </h1>
 
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                                                $420.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                2022-08-04
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
-                                            </td>
-
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                                                $9,000.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                2022-08-04
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
-                                            </td>
-
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                                $36,000.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                2022-08-04
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
-                                            </td>
-
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                                $1,490.00
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
+                            <p class="mt-2 text-gray-500 dark:text-gray-400">Bank Name: {{ $payee->bank_name }}</p>
+                            <p class="mt-2 text-gray-500 dark:text-gray-400">Routing No: {{ $payee->routing_number }}
+                            </p>
+                            <p class="mt-2 text-gray-500 dark:text-gray-400">Account No: {{ $payee->account_number }}
+                            </p>
                         </div>
-                    </div>
-                    <div class="w-full xl:w-4/12 px-4">
-                        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-                            <div class="rounded-t mb-0 px-4 py-3 border-0">
-                                <div class="flex flex-wrap items-center">
-                                    <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                                        <h3 class="font-semibold text-base text-blueGray-700">
-                                            Social traffic
-                                        </h3>
-                                    </div>
-                                    <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                                        <button
-                                            class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
-                                            type="button" style="transition:all .15s ease">
-                                            See all
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block w-full overflow-x-auto">
-                                <!-- Projects table -->
-                                <table class="items-center w-full bg-transparent border-collapse">
-                                    <thead class="thead-light">
-                                        <tr>
-                                            <th
-                                                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                                Referral
-                                            </th>
-                                            <th
-                                                class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                                Visitors
-                                            </th>
-                                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-                                                style="min-width:140px"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                Facebook
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                1,480
-                                            </td>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <div class="flex items-center">
-                                                    <span class="mr-2">60%</span>
-                                                    <div class="relative w-full">
-                                                        <div
-                                                            class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                                                            <div style="width:60%"
-                                                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                Facebook
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                5,480
-                                            </td>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <div class="flex items-center">
-                                                    <span class="mr-2">70%</span>
-                                                    <div class="relative w-full">
-                                                        <div
-                                                            class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
-                                                            <div style="width:70%"
-                                                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                Google
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                4,807
-                                            </td>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <div class="flex items-center">
-                                                    <span class="mr-2">80%</span>
-                                                    <div class="relative w-full">
-                                                        <div
-                                                            class="overflow-hidden h-2 text-xs flex rounded bg-purple-200">
-                                                            <div style="width:80%"
-                                                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                Instagram
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                3,678
-                                            </td>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <div class="flex items-center">
-                                                    <span class="mr-2">75%</span>
-                                                    <div class="relative w-full">
-                                                        <div
-                                                            class="overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200">
-                                                            <div style="width:75%"
-                                                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lightBlue-500">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                twitter
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                2,645
-                                            </td>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <div class="flex items-center">
-                                                    <span class="mr-2">30%</span>
-                                                    <div class="relative w-full">
-                                                        <div
-                                                            class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
-                                                            <div style="width:30%"
-                                                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        @endforeach
+
+
+
+
                     </div>
                 </div>
-                <footer class="block py-4">
-                    <div class="container mx-auto px-4">
-                        <hr class="mb-4 border-b-1 border-blueGray-200" />
-                        <div class="flex flex-wrap items-center md:justify-between justify-center">
-                            <div class="w-full md:w-4/12 px-4">
-                                <div class="text-sm text-blueGray-500 font-semibold py-1">
-                                    Copyright © <span id="javascript-date"></span>
+            </section>
+            @else
 
+            @endif
+            <div class="container px-6 py-12 mx-auto">
+                <div class="">
 
+                    <p class="md:text-2xl font-bold capitalize">Wire Transfer</p>
 
-
-                                </div>
+                    <div class="border border-black p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="account">Transfer from</label>
+                                <select name="account" id="account" class="w-full">
+                                    <option value="checking">Checking ****5450</option>
+                                    <option value="savings">Checking ****4920</option>
+                                </select>
                             </div>
-
-
+                            <div>
+                                <label for="reciepient">Receipient</label>
+                                <select name="reciepient" id="" class="w-full">
+                                    @foreach ($payees as $reciepient)
+                                    <option value="">{{ $reciepient->firstname }} {{ $reciepient->lastname }} {{
+                                        $reciepient->account_number }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                            <div>
+                                <label for="account">Amount</label>
+                                <input type="text" class="w-full">
+                            </div>
+                            <div>
+                                <label for="recipient">Message</label>
+                                <input type="text" class="w-full" placeholder="optional message for the recipient">
+                            </div>
+                        </div>
+                        <button type="button" disabled class="py-2 px-6 bg-gray-700 text-white mt-2">Send</button>
                     </div>
+                </div>
             </div>
-            </footer>
+
+
         </div>
     </div>
     </div>

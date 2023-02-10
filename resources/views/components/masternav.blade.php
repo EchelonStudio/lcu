@@ -43,6 +43,59 @@
                         href="{{ route('loans') }}">
                         Loans</a>
                 </li>
+                <li class="flex items-center">
+
+
+
+                    <svg class="w-5 h-5 pl-2 md:pl-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                        <path fill="white"
+                            d="M88 216c81.7 10.2 273.7 102.3 304 232H0c99.5-8.1 184.5-137 88-232zm32-152c32.3 35.6 47.7 83.9 46.4 133.6C249.3 231.3 373.7 321.3 400 448h96C455.3 231.9 222.8 79.5 120 64z" />
+                    </svg>
+                    <div x-data="{ 'isOpen': false }" class="relative inline-block">
+                        <button @click="isOpen = !isOpen"
+                            class="text-black  lg:hover:text-gray-300  px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                            Product & Services
+                            <div :class="{'-rotate-180': isOpen === true}">
+                                <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div x-show="isOpen" @click.away="isOpen = false"
+                            x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-100"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+                            x-cloak
+                            class="absolute right-0 z-20 w-full md:w-48 py-2 mt-2 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800">
+                            @auth
+                            <a href="{{ route('dashboard') }}"
+                                class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                Account Dashboard</a>
+                            @endauth
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                Apply for Credit card</a>
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                Business Loan </a>
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                Auto Loan</a>
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                Community</a>
+                            <a href="#"
+                                class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                Open an Account</a>
+                        </div>
+                    </div>
+                </li>
                 {{-- <li class="flex items-center">
                     <svg class="w-5 h-5 pl-2 md:pl-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                         <path fill="white"

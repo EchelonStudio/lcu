@@ -12,7 +12,10 @@ Route::controller(PagesController::class)->group(function(){
     Route::get('/checking-and-savings', 'checkingandsavings')->name('cands');
     Route::get('/credit-cards', 'creditcards')->name('cc');
     Route::get('/loans', 'loans')->name('loans');
-    Route::get('/product-and-services', 'productandservices')->name('pands');
+    Route::get('/test', 'test');
+    Route::get('/user/account/transfer', 'transfer')->name('transfer');
+    Route::post('/user/account/add-payee', 'addPayee')->name('Payee');
+
     
 });
 
