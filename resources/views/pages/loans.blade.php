@@ -480,6 +480,96 @@
                     class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Apply</button>
             </div>
         </section>
+        <div class="font-sans font-bold text-lg md:text-4xl text-center my-8">
+            <h1>Apply</h1>
+        </div>
+        <div class="px-6 md:px-0">
+            <div class="mx-auto container  py-12 my-12 rounded-md ">
+                <section class="p-6 dark:bg-gray-800 dark:text-gray-50">
+                    <form novalidate="" action=""
+                        class="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
+                        <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
+                            <div class="space-y-2 col-span-full lg:col-span-1">
+                                <p class="font-medium">Personal Inormation</p>
+                                <p class="text-xs">Tell us a bit about you
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+                                <div class="col-span-full sm:col-span-3">
+                                    <label for="firstname" class="text-sm">First name</label>
+                                    <input id="firstname" type="text" placeholder="First name"
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                                <div class="col-span-full sm:col-span-3">
+                                    <label for="lastname" class="text-sm">Last name</label>
+                                    <input id="lastname" type="text" placeholder="Last name"
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                                <div class="col-span-full sm:col-span-3">
+                                    <label for="email" class="text-sm">Email</label>
+                                    <input id="email" type="email" placeholder="Email"
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                                <div class="col-span-full">
+                                    <label for="address" class="text-sm">Address</label>
+                                    <input id="address" type="text" placeholder=""
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                                <div class="col-span-full sm:col-span-2">
+                                    <label for="city" class="text-sm">City</label>
+                                    <input id="city" type="text" placeholder=""
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                                <div class="col-span-full sm:col-span-2">
+                                    <label for="state" class="text-sm">State / Province</label>
+                                    <input id="state" type="text" placeholder=""
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                                <div class="col-span-full sm:col-span-2">
+                                    <label for="zip" class="text-sm">ZIP / Postal</label>
+                                    <input id="zip" type="text" placeholder=""
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
+                            <div class="space-y-2 col-span-full lg:col-span-1">
+                                <p class="font-medium">Type</p>
+                                <p class="text-xs">Choose best CC applicable to you</p>
+                            </div>
+                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+                                <div class="col-span-full sm:col-span-3">
+                                    <label for="cc_type" class="text-sm">Loan Options</label>
+
+                                    <select name="cc_type" id="cc_type"
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                        <option value="">Business Loan</option>
+                                        <option value="">Auto Loan</option>
+                                        <option value="">Mortgage</option>
+                                    </select>
+                                </div>
+                                <div class="col-span-full sm:col-span-3">
+                                    <label for="website" class="text-sm">US Citizen ? </label>
+                                    <input id="website" type="text"
+                                        class="w-full rounded-md   dark:border-gray-700 dark:text-gray-900">
+                                </div>
+                                <div class="col-span-full">
+                                    <label for="bio" class="text-sm">Tell us why you need the loan</label>
+                                    <textarea id="bio" placeholder=""
+                                        class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900"></textarea>
+                                </div>
+
+                                <div class="col-span-full">
+                                    <div class="py-2 px-6 text-center hover:bg-gray-600 bg-gray-700 text-white">
+                                        <button type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
+        </div>
 
     </main>
 </x-layout>

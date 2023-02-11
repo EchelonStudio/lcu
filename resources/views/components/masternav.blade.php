@@ -78,19 +78,17 @@
                                 class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 Account Dashboard</a>
                             @endauth
-                            <a href="#"
+                            <a href="{{ route('cc') }}"
                                 class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 Apply for Credit card</a>
-                            <a href="#"
+                            <a href="{{ route('loans') }}"
                                 class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                Business Loan </a>
-                            <a href="#"
+                                Apply for loan </a>
+
+                            {{-- <a href="#"
                                 class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                Auto Loan</a>
-                            <a href="#"
-                                class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                                Community</a>
-                            <a href="#"
+                                Community</a> --}}
+                            <a href="{{ route('register') }}"
                                 class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 Open an Account</a>
                         </div>
