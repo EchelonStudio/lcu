@@ -14,6 +14,7 @@ Route::controller(PagesController::class)->group(function(){
     Route::get('/loans', 'loans')->name('loans');
     Route::get('/test', 'test');
     Route::get('/user/account/transfer', 'transfer')->name('transfer');
+    Route::get('/user/account/deposit', 'deposit')->name('deposit');
     Route::post('/user/account/add-payee', 'addPayee')->name('Payee');
 
     

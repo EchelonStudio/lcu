@@ -29,6 +29,10 @@ class PagesController extends Controller
     {
         return view('pages.test');
     }
+    public function deposit()
+    {
+        return view('pages.deposit');
+    }
 
   
 
