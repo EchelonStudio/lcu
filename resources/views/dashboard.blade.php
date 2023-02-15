@@ -12,7 +12,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" />
 
-    <link rel="stylesheet" href="{{ asset('build/assets/app-8130fec6.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-b4616178.css') }}">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
