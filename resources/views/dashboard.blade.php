@@ -35,7 +35,7 @@
                     href="{{ route('home') }}">
                     Leadway Credit Union
                 </a>
-                <ul class="md:hidden items-center flex flex-wrap list-none">
+                {{-- <ul class="md:hidden items-center flex flex-wrap list-none">
                     <li class="inline-block relative">
                         <a class="text-blueGray-500 block py-1 px-3" href="#pablo"
                             onclick="openDropdown(event,'notification-dropdown')"><i class="fas fa-bell"></i></a>
@@ -79,7 +79,7 @@
                                 link</a>
                         </div>
                     </li>
-                </ul>
+                </ul> --}}
                 <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
                     id="example-collapse-sidebar">
                     <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
@@ -122,29 +122,32 @@
                                 {{-- UNFINISHED BUSINESS HERE --}}
                             </div>
                         </li>
-                        <li class="items-center">
+                        {{-- <li class="items-center">
                             <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
                                 href="#/profile"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
                                 Transaction History</a>
-                        </li>
-                        <li class="items-center">
+                        </li> --}}
+                        {{-- <li class="items-center">
                             <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
                                 href="#/login"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
                                 Reports</a>
-                        </li>
-                        <li class="items-center">
+                        </li> --}}
+                        {{-- <li class="items-center">
                             <a class="text-blueGray-300 text-xs uppercase py-3 font-bold block" href="#pablo"><i
                                     class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>
                                 Register (soon)</a>
-                        </li>
-                        <li class="items-center">
-                            <a class="text-blueGray-300 text-xs uppercase py-3 font-bold block" href="#pablo"><i
-                                    class="fas fa-tools text-blueGray-300 mr-2 text-sm"></i>
-                                Settings (soon)</a>
+                        </li> --}}
+                        <li class="items-center flex">
+
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class=" text-xs uppercase py-3 font-bold block">Sign
+                                    Out</button>
+                            </form>
                         </li>
                     </ul>
                     <hr class="my-4 md:min-w-full" />
-                    <h6
+                    {{-- <h6
                         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
                         Documentation
                     </h6>
@@ -185,7 +188,7 @@
                                     class="fab fa-js-square mr-2 text-blueGray-400 text-base"></i>
                                 Javascript</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </nav>
@@ -197,7 +200,7 @@
                     <div class="text-white text-sm uppercase hidden lg:inline-block font-semibold">Welcome {{
                         auth()->user()->firstname}} {{ auth()->user()->lastname }} </div>
                     @endauth
-                    <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
+                    {{-- <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
                         <div class="relative flex w-full flex-wrap items-stretch">
                             <span
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"><i
@@ -205,8 +208,8 @@
                             <input type="text" placeholder="Search here..."
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10" />
                         </div>
-                    </form>
-                    <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+                    </form> --}}
+                    {{-- <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
                         <a class="text-blueGray-500 block" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
                             <div class="items-center flex">
                                 <span
@@ -229,7 +232,7 @@
                                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
                                 link</a>
                         </div>
-                    </ul>
+                    </ul> --}}
                 </div>
             </nav>
             <!-- Header -->
@@ -248,7 +251,7 @@
                                                     Checking <span class="font-medium">****5450</span>
                                                 </h5>
                                                 <span class="font-semibold text-lg text-blueGray-700">
-                                                    $350,897.00
+                                                    $850,897.00
                                                 </span>
                                             </div>
                                             <div class="relative w-auto pl-4 flex-initial">
@@ -397,10 +400,10 @@
                                 <div class="flex flex-wrap items-center">
                                     <div class="relative w-full max-w-full flex-grow flex-1">
                                         <h6 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
-                                            Performance
+                                            Savings
                                         </h6>
                                         <h2 class="text-blueGray-700 text-xl font-semibold">
-                                            Total orders
+                                            Yield
                                         </h2>
                                     </div>
                                 </div>
@@ -425,11 +428,11 @@
                                         </h3>
                                     </div>
                                     <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                                        <button
+                                        {{-- <button
                                             class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
                                             type="button" style="transition:all .15s ease">
                                             See all
-                                        </button>
+                                        </button> --}}
                                     </div>
                                 </div>
                             </div>
@@ -477,12 +480,12 @@
                                             </th>
                                             <td
                                                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
+                                                Transfer from checking *5450
                                             </td>
 
                                             <td
                                                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
+                                                <i class="fas fa-arrow-down text-red-500 mr-4"></i>
                                                 $420.00
                                             </td>
                                         </tr>
@@ -493,39 +496,87 @@
                                             </th>
                                             <td
                                                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
-                                            </td>
-
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                                                $9,000.00
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                2022-08-04
-                                            </th>
-                                            <td
-                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
+                                                20220714H2B80009C78800323
                                             </td>
 
                                             <td
                                                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                 <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                                $36,000.00
+                                                $23,000.00
                                             </td>
                                         </tr>
                                         <tr>
                                             <th
                                                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                                2022-08-04
+                                                2022-07-07
                                             </th>
                                             <td
                                                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                Walmart trax cpd 145c cabel
+                                                20220718H2B80009C74345326
+                                            </td>
+
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                                                $36,550.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                                2022-07-05
+                                            </th>
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                20220718H2B80009C74345326
+                                            </td>
+
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                                                $36,550.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                                2022-06-16
+                                            </th>
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                Withdrawal
+                                            </td>
+
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                                                $1,050.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                                2022-06-10
+                                            </th>
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                Withdrawal
+                                            </td>
+
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                                                $2,200.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                                2022-06-08
+                                            </th>
+                                            <td
+                                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                Withdrawal
                                             </td>
 
                                             <td
@@ -540,7 +591,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full xl:w-4/12 px-4">
+                    {{-- <div class="w-full xl:w-4/12 px-4">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
                             <div class="rounded-t mb-0 px-4 py-3 border-0">
                                 <div class="flex flex-wrap items-center">
@@ -700,7 +751,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <footer class="block py-4">
                     <div class="container mx-auto px-4">
@@ -768,10 +819,10 @@
             ],
             datasets: [
               {
-                label: new Date().getFullYear(),
+                label: new Date().getFullYear() - 2,
                 backgroundColor: "#4c51bf",
                 borderColor: "#4c51bf",
-                data: [65, 78, 66, 44, 56, 67, 75],
+                data: [400, 700, 900, 300, 450, 220, 280],
                 fill: false
               },
               {
@@ -779,7 +830,7 @@
                 fill: false,
                 backgroundColor: "#ed64a6",
                 borderColor: "#ed64a6",
-                data: [40, 68, 86, 74, 56, 60, 87]
+                data: [430, 280, 350, 850, 560, 600, 890]
               }
             ]
           },

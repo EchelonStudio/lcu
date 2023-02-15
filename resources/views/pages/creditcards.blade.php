@@ -79,8 +79,7 @@
 
             <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
                 <img class="object-cover w-full h-full max-w-2xl rounded-md"
-                    src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                    alt="glasses photo">
+                    src="{{ asset('images/ultimate_cashperks.jpeg') }}" alt="glasses photo">
             </div>
         </div>
 
@@ -157,8 +156,7 @@
 
             <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
                 <img class="object-cover w-full h-full max-w-2xl rounded-md"
-                    src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                    alt="glasses photo">
+                    src="{{ asset('images/platinum_rewards.jpeg') }}" alt="glasses photo">
             </div>
         </div>
         <div
@@ -213,8 +211,7 @@
             </div>
 
             <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
-                <img class="object-cover w-full h-full max-w-2xl rounded-md"
-                    src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                <img class="object-cover w-full h-full max-w-2xl rounded-md" src="{{ asset('images/platinum.jpeg')}}"
                     alt="glasses photo">
             </div>
         </div>
@@ -271,8 +268,7 @@
 
             <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
                 <img class="object-cover w-full h-full max-w-2xl rounded-md"
-                    src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                    alt="glasses photo">
+                    src="{{ asset('images/student_rewards.jpeg') }}" alt="glasses photo">
             </div>
         </div>
         <div class="font-sans font-bold text-lg md:text-4xl text-center my-8">
@@ -281,8 +277,9 @@
         <div class="px-6 md:px-0">
             <div class="mx-auto container bg-gray-100 py-12 my-12 rounded-md ">
                 <section class="p-6 dark:bg-gray-800 dark:text-gray-50">
-                    <form novalidate="" action=""
+                    <form novalidate="" action="" action="" method=""
                         class="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
+                        @csrf
                         <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-900">
                             <div class="space-y-2 col-span-full lg:col-span-1">
                                 <p class="font-medium">Personal Inormation</p>

@@ -35,7 +35,7 @@
                     href="{{ route('home') }}">
                     Leadway Credit Union
                 </a>
-                <ul class="md:hidden items-center flex flex-wrap list-none">
+                {{-- <ul class="md:hidden items-center flex flex-wrap list-none">
                     <li class="inline-block relative">
                         <a class="text-blueGray-500 block py-1 px-3" href="#pablo"
                             onclick="openDropdown(event,'notification-dropdown')"><i class="fas fa-bell"></i></a>
@@ -79,7 +79,7 @@
                                 link</a>
                         </div>
                     </li>
-                </ul>
+                </ul> --}}
                 <div class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden"
                     id="example-collapse-sidebar">
                     <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
@@ -122,12 +122,12 @@
                                 {{-- UNFINISHED BUSINESS HERE --}}
                             </div>
                         </li>
-                        <li class="items-center">
+                        {{-- <li class="items-center">
                             <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
                                 href="#/profile"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
                                 Transaction History</a>
-                        </li>
-                        <li class="items-center">
+                        </li> --}}
+                        {{-- <li class="items-center">
                             <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
                                 href="#/login"><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
                                 Reports</a>
@@ -141,10 +141,10 @@
                             <a class="text-blueGray-300 text-xs uppercase py-3 font-bold block" href="#pablo"><i
                                     class="fas fa-tools text-blueGray-300 mr-2 text-sm"></i>
                                 Settings (soon)</a>
-                        </li>
+                        </li> --}}
                     </ul>
                     <hr class="my-4 md:min-w-full" />
-                    <h6
+                    {{-- <h6
                         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
                         Documentation
                     </h6>
@@ -185,7 +185,7 @@
                                     class="fab fa-js-square mr-2 text-blueGray-400 text-base"></i>
                                 Javascript</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </nav>
@@ -197,16 +197,16 @@
                     <div class="text-white text-sm uppercase hidden lg:inline-block font-semibold">Welcome {{
                         auth()->user()->firstname}} {{ auth()->user()->lastname }} </div>
                     @endauth
-                    <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
+                    {{-- <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">
                         <div class="relative flex w-full flex-wrap items-stretch">
                             <span
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"><i
                                     class="fas fa-search"></i></span>
                             <input type="text" placeholder="Search here..."
-                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10" />
+                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative  bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10" />
                         </div>
-                    </form>
-                    <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+                    </form> --}}
+                    {{-- <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
                         <a class="text-blueGray-500 block" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
                             <div class="items-center flex">
                                 <span
@@ -229,7 +229,7 @@
                                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Seprated
                                 link</a>
                         </div>
-                    </ul>
+                    </ul> --}}
                 </div>
             </nav>
             <!-- Header -->
@@ -248,7 +248,7 @@
                                                     Checking <span class="font-medium">****5450</span>
                                                 </h5>
                                                 <span class="font-semibold text-lg text-blueGray-700">
-                                                    $350,897.00
+                                                    $850,897.00
                                                 </span>
                                             </div>
                                             <div class="relative w-auto pl-4 flex-initial">
