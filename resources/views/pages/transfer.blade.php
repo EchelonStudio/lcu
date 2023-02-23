@@ -31,7 +31,7 @@
             @endif
         </div>
         <div x-data="{'showDropdown' : false }"
-            class="p-6 border border-black relative inline-block items-center w-full">
+            class="p-6 shadow-md rounded-md relative inline-block items-center w-full rounded-md">
             <div class="flex justify-between">
                 @if (isset($payees))
                 <p>You have total number of payee : <span class="font-bold">{{ $payees->count() }}</span></p>
@@ -51,7 +51,7 @@
                         <div>
                             <label for="firstname" class="mr-4">Firstname</label>
                             <input type="text" name="firstname" id="firstname" placeholder="Enter the Payee firstname"
-                                class="w-full " value="{{ old('firstname') }}">
+                                class="w-full rounded-md " value="{{ old('firstname') }}">
                             @error('firstname')
                             <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
                             @enderror
@@ -59,7 +59,7 @@
                         <div>
                             <label for="lastname" class="mr-4">Lastname</label>
                             <input type="text" name="lastname" id="lastname" placeholder="Enter the payee lastname"
-                                class="w-full " value="{{ old('lastname') }}">
+                                class="w-full rounded-md " value="{{ old('lastname') }}">
                             @error('lastname')
                             <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
                             @enderror
@@ -67,7 +67,7 @@
 
                         <div><label for="bankname" class="mr-4">Bank name</label>
                             <input type="text" name="bank_name" id="bank_name" placeholder="Enter the payee bank name"
-                                class="w-full " value="{{ old('bank_name') }}">
+                                class="w-full rounded-md " value="{{ old('bank_name') }}">
                             @error('bank_name')
                             <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
                             @enderror
@@ -76,7 +76,7 @@
                         <div>
                             <label for="routing" class="mr-4">Routing</label>
                             <input type="text" name="routing_number" id="routing_number"
-                                placeholder="Enter the payee bank routing number" class="w-full "
+                                placeholder="Enter the payee bank routing number" class="w-full rounded-md "
                                 value="{{ old('routing_number') }}">
                             @error('routing_number')
                             <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
@@ -86,7 +86,7 @@
                         <div>
                             <label for="account_number" class="">Account number</label>
                             <input type="text" name="account_number" id="account_number"
-                                placeholder="Enter the payee bank account number" class="w-full "
+                                placeholder="Enter the payee bank account number" class="w-full rounded-md "
                                 value="{{ old('account_number') }}">
                             @error('bank_name')
                             <p class="mt-1 text-red-500 text-xs">{{ $message }}</p>
@@ -139,18 +139,18 @@
 
             <p class="md:text-2xl font-bold capitalize">Wire Transfer</p>
 
-            <div class="border border-black p-4">
+            <div class="shadow-md rounded-md p-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="account">Transfer from</label>
-                        <select name="account" id="account" class="w-full">
+                        <select name="account" id="account" class="w-full rounded-md">
                             <option value="checking">Checking ****5450</option>
                             <option value="savings">Checking ****4920</option>
                         </select>
                     </div>
                     <div>
                         <label for="reciepient">Receipient</label>
-                        <select name="reciepient" id="" class="w-full">
+                        <select name="reciepient" id="" class="w-full rounded-md">
                             @foreach ($payees as $reciepient)
                             <option value="">{{ $reciepient->firstname }} {{ $reciepient->lastname }} {{
                                 $reciepient->account_number }}</option>
@@ -161,11 +161,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     <div>
                         <label for="account">Amount</label>
-                        <input type="text" class="w-full">
+                        <input type="text" class="w-full rounded-md">
                     </div>
                     <div>
                         <label for="recipient">Message</label>
-                        <input type="text" class="w-full" placeholder="optional message for the recipient">
+                        <input type="text" class="w-full rounded-md" placeholder="optional message for the recipient">
                     </div>
                 </div>
                 <button type="button" disabled class="py-2 px-6 bg-gray-700 text-white mt-2">Send</button>

@@ -62,7 +62,9 @@
                     <div class="w-6/12">
                         <a class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                             href="javascript:void(0)">
-                            Hi {{ auth()->user()->firstname }} {{ auth()->user()->lastname }}
+                            Hi @auth
+                            {{ auth()->user()->firstname }} {{ auth()->user()->lastname }}
+                            @endauth
                         </a>
                     </div>
                     <div class="w-6/12 flex justify-end">
@@ -102,10 +104,20 @@
                         href="{{ route('deposit') }}"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
                         Deposit</a>
                 </li>
-                <li class="items-center mt-4">
+                {{-- <li class="items-center mt-4">
                     <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
                         href="#/profile"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
                         My Cards</a>
+                </li> --}}
+                <li class="items-center mt-4">
+                    <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                        href="{{ route('loans') }}"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
+                        Apply for loan</a>
+                </li>
+                <li class="items-center mt-4">
+                    <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                        href="{{ route('cc') }}"><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
+                        Apply for CC</a>
                 </li>
                 {{-- <li class="items-center">
                     <a class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
@@ -134,7 +146,18 @@
             <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
                 <li class="inline-flex">
                     <a class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
-                        href="#/documentation/styles"><i
+                        href="{{ route('privacy') }}"><i
+                            class="fas fa-paint-brush mr-2 text-blueGray-400 text-base"></i>
+                        Privacy Policy</a>
+                </li>
+                <li class="inline-flex">
+                    <a class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
+                        href="{{ route('terms') }}"><i class="fas fa-paint-brush mr-2 text-blueGray-400 text-base"></i>
+                        Terms and Condition</a>
+                </li>
+                <li class="inline-flex">
+                    <a class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
+                        href="{{ route('changepassword') }}"><i
                             class="fas fa-paint-brush mr-2 text-blueGray-400 text-base"></i>
                         Change Password</a>
                 </li>

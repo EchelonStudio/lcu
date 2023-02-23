@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Payee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class PagesController extends Controller
 {
@@ -32,6 +34,18 @@ class PagesController extends Controller
     public function deposit()
     {
         return view('pages.deposit');
+    }
+    public function privacy()
+    {
+        return view('pages.privacy');
+    }
+    public function terms()
+    {
+        return view('pages.terms');
+    }
+    public function aboutus()
+    {
+        return view('pages.about');
     }
 
   
@@ -68,6 +82,46 @@ class PagesController extends Controller
         ]);
 
         return back()->with('success', 'Payee Added Successfully');
+
+    }
+
+
+
+
+    public function changepassword()
+    {
+        return view('pages.changepassword');
+    }
+
+    public function newpassword(Request $request)
+    {   $user = auth()->user();
+        
+        $request->validate([
+            'oldpassword' => 'required',
+            'password' => 'required|confirmed'
+        ]);
+
+          #Match The Old Password
+        if(!Hash::check($request->oldpassword, auth()->user()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
+        }else {
+               #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+      
+       
+        Auth::logout($user);
+
+       
+
+        return redirect('login')->with('success', 'Password changed succesfully, you can now log in with new password');
+
+
+        }
+
+      
 
     }
 }
