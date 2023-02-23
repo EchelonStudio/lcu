@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" />
-    {{--
-    <link rel="stylesheet" href="{{ asset('build/assets/app-b4616178.css') }}"> --}}
+
+    <link rel="stylesheet" href="{{ asset('build/assets/app-3fd59e2a.css') }}">
     <title>Leadway Credit Union</title>
 
     <style>
@@ -20,7 +20,7 @@
             display: none !important;
         }
     </style>
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
 </head>
 
 <body class=" antialiased">
