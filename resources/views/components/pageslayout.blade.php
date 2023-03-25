@@ -15,6 +15,8 @@
 
   {{--
   <link rel="stylesheet" href="{{ asset('build/assets/app-3fd59e2a.css') }}"> --}}
+
+  <link rel="stylesheet" href="{{ asset('build/assets/app-9e4714ae.css') }}">
   <!-- Popper -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <title>
@@ -24,7 +26,7 @@
     Leadway Credit Union
     @endif
   </title>
-  @vite(['resources/css/app.css'])
+  {{-- @vite(['resources/css/app.css']) --}}
 </head>
 
 <body class="text-blueGray-700 antialiased">
