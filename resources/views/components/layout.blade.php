@@ -12,7 +12,8 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" />
 
-    <link rel="stylesheet" href="{{ asset('build/assets/app-3fd59e2a.css') }}">
+    {{--
+    <link rel="stylesheet" href="{{ asset('build/assets/app-3fd59e2a.css') }}"> --}}
     <title>Leadway Credit Union</title>
 
     <style>
@@ -20,12 +21,13 @@
             display: none !important;
         }
     </style>
-    {{-- @vite('resources/css/app.css') --}}
+    @vite('resources/css/app.css')
 </head>
 
 <body class=" antialiased">
+    @if (session()->has('success'))
     <div class="mt-16">
-        @if (session()->has('success'))
+
         <div class="px-4 md:px-0">
             <div x-data="{show: true}" x-init="setTimeout(() => show = false, 10000)" x-show="show"
                 class="{{ (session('success') ? 'bg-emerald-500' : 'bg-red-500 ') }} mx-auto max-w-lg rounded-lg md:max-w-4xl text-white ">
@@ -53,8 +55,9 @@
         </div>
         @endif
     </div>
+    @if (session()->has('error'))
     <div class="mt-16">
-        @if (session()->has('error'))
+
         <div class="px-4 md:px-0 ">
             <div x-data="{show: true}" x-init="setTimeout(() => show = false, 10000)" x-show="show"
                 class="{{ (session('error') ? 'bg-red-500' : 'bg-red-500 ') }} mx-auto max-w-lg rounded-lg md:max-w-4xl text-white ">

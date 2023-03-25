@@ -255,8 +255,12 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
+            <button type="button"
+                class="w-full py-2 bg-slate-700 text-white text-center mt-4 rounded-md focus:bg-slate-600">Submit</button>
+
         </section>
     </div>
 </x-pageslayout>
