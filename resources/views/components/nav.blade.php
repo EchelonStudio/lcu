@@ -135,6 +135,17 @@
                         </a>
                     </div>
                 </li>
+                @else
+                <li class="flex items-center">
+                    <div
+                        class="bg-gray-700 text-white  md:bg-gray-100  active:bg-gray-100 active:text-gray-700 md:text-gray-700 text-xs w-full font-bold uppercase mx-4 text-center md:mx-0 px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 md:ml-3 mb-3">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class=" text-xs uppercase py-3 font-bold block">Sign
+                                Out</button>
+                        </form>
+                    </div>
+                </li>
                 @endguest
             </ul>
         </div>
