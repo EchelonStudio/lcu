@@ -147,7 +147,7 @@
                             <x-input-error :messages="$errors->get('idback')" class="mt-2" />
                         </div>
 
-                        <button type="submit"
+                        <button type="submit" disabled
                             class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-700 rounded-lg hover:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                             <span>Sign Up </span>
 

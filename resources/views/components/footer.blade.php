@@ -14,7 +14,7 @@
                     we respond 1-2 business days.
                 </h5>
                 <div class="my-6 text-blue-600">
-                    <h2>contact@leadwaycreditunion.com</h2>
+                    <h2>contact@leadwaycu.icu</h2>
                 </div>
             </div>
             <div class="w-full lg:w-6/12 px-4">

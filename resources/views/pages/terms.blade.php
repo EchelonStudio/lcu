@@ -92,7 +92,7 @@
             <h2 class="py-4 font-semibold">CONTACT INFORMATION</h2>
 
             <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-            <h3>contact@leadwaycreditunion.com</h3>
+            <h3>contact@leadwaycu.icu</h3>
 
             <h3 class="my-12">LAST UPDATED: February 22, 2023</h3>
         </div>

@@ -13,7 +13,7 @@
     href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" />
 
 
-  
+
 
 
   <link rel="stylesheet" href="{{ asset('build/assets/app-9e4714ae.css') }}">
@@ -91,7 +91,7 @@
                           Checking <span class="font-medium">****5450</span>
                         </h5>
                         <span class="font-semibold text-lg text-blueGray-700">
-                          $850,897.00
+                          £5,002,100
                         </span>
                       </div>
                       <div class="relative w-auto pl-4 flex-initial">
@@ -121,7 +121,7 @@
                           Savings <span class="font-medium">****4920</span>
                         </h5>
                         <span class="font-semibold text-lg text-blueGray-700">
-                          $1,090,400.00
+                          £720.00
                         </span>
                       </div>
                       <div class="relative w-auto pl-4 flex-initial">
@@ -151,7 +151,7 @@
                           Investment
                         </h5>
                         <span class="font-semibold text-lg text-blueGray-700">
-                          $400,000.00
+                          £145,600.00
                         </span>
                       </div>
                       <div class="relative w-auto pl-4 flex-initial">
@@ -181,7 +181,7 @@
                           Loan
                         </h5>
                         <span class="font-semibold text-xl text-blueGray-700">
-                          $0.00
+                          £0.00
                         </span>
                       </div>
                       <div class="relative w-auto pl-4 flex-initial">
