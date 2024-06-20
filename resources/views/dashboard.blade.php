@@ -89,103 +89,88 @@
                                 <tr>
                                     <th
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-08-04
+                                        13-01-2024
                                     </th>
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        Walmart trax cpd 145c cabel
+                                        LBTH Council Tax
                                     </td>
 
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                                        $900
+                                        £350
                                     </td>
                                 </tr>
                                 <tr>
                                     <th
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-08-04
+                                        29-12-2023
                                     </th>
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        Transfer from checking *5450
+                                        Thames Water
                                     </td>
 
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                        $420.00
+                                        £46.00
                                     </td>
                                 </tr>
                                 <tr>
                                     <th
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-08-04
+                                        27-12-2023
                                     </th>
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        20220714H2B80009C78800323
+                                        Transfer From Checking
                                     </td>
 
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                        $23,000.00
+                                        £1,900.00
                                     </td>
                                 </tr>
                                 <tr>
                                     <th
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-07-07
+                                        12-12-2023
                                     </th>
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        20220718H2B80009C74345326
+                                        20230718H2B80009C74345326
                                     </td>
 
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                        $36,550.00
+                                        £36,550.00
                                     </td>
                                 </tr>
+
                                 <tr>
                                     <th
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-07-05
+                                        12-09-2023
                                     </th>
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        20220718H2B80009C74345326
+                                        External Withdrawal WILLIAMS - SAVINGS
                                     </td>
 
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                        $36,550.00
+                                        £5,020.29
                                     </td>
                                 </tr>
                                 <tr>
                                     <th
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-06-16
-                                    </th>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        Withdrawal
-                                    </td>
-
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                        <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                        $1,050.00
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-06-10
+                                        12-08-2023
                                     </th>
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
@@ -195,13 +180,13 @@
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                        $2,200.00
+                                        £1,050.00
                                     </td>
                                 </tr>
                                 <tr>
                                     <th
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        2022-06-08
+                                        12-05-2023
                                     </th>
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
@@ -211,7 +196,23 @@
                                     <td
                                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <i class="fas fa-arrow-down text-red-500 mr-4"></i>
-                                        $1,490.00
+                                        £2,200.00
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                        12-03-2023
+                                    </th>
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        Withdrawal
+                                    </td>
+
+                                    <td
+                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                        <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                                        £1,490.00
                                     </td>
                                 </tr>
 
